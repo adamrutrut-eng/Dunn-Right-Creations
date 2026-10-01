@@ -299,11 +299,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .form-card .hint { color: var(--muted); margin: 0 0 20px; font-size: var(--step--1); }
 .field { display: grid; gap: 6px; min-width: 0; }
 .field label { font-family: var(--font-display); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; font-size: .82rem; color: var(--muted); }
-.field input, .field select, .field textarea {
+.field input:not([type="radio"]):not([type="checkbox"]), .field select, .field textarea {
   width: 100%; border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; background: #fff; color: var(--text);
   transition: border-color .15s ease, box-shadow .15s ease;
 }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(31,111,235,.15); }
+.field input:not([type="radio"]):not([type="checkbox"]):focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(31,111,235,.15); }
+.radio-row input[type="radio"] {
+  appearance: auto; -webkit-appearance: radio; width: 20px; height: 20px; margin: 0; padding: 0; border: 0; flex: none;
+  accent-color: var(--blue); cursor: pointer;
+}
 .field textarea { min-height: 120px; resize: vertical; }
 .field input[type="file"] { padding: 10px; font-size: .9rem; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
